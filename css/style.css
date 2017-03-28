@@ -1,0 +1,9 @@
+.countries {
+    fill: #FFF;
+    stroke: #CCC;
+    stroke-width: 2px;
+}
+
+.map {
+    border: medium solid #999;
+}
