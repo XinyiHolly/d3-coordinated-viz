@@ -66,6 +66,9 @@ function setMap(){
 
         //translate countries TopoJSON
         var worldCountries = topojson.feature(countries, countries.objects.ne_10m_admin_0_countries).features;
+        
+        console.log(csvData[0]);
+        console.log(worldCountries[0]);
 
         //add world countries to map
         var countries = map.append("path")
@@ -339,16 +342,16 @@ function changeAttribute(attribute, csvData){
             })
             //size/resize bars
             .attr("height", function(d, i){
-                console.log(463 - yScale(parseFloat(d[expressed])));
+                //console.log(463 - yScale(parseFloat(d[expressed])));
                 return 463 - yScale(parseFloat(d[expressed]));
             })
             .attr("y", function(d, i){
-                console.log(yScale(parseFloat(d[expressed])) + topBottomPadding);
+                //console.log(yScale(parseFloat(d[expressed])) + topBottomPadding);
                 return yScale(parseFloat(d[expressed])) + topBottomPadding;
             })
             //color/recolor bars
             .style("fill", function(d){
-                console.log(choropleth(d, colorScale));
+                //console.log(choropleth(d, colorScale));
                 return choropleth(d, colorScale);
             });
 
@@ -357,23 +360,23 @@ function changeAttribute(attribute, csvData){
 
 //function to position, size, and color bars in chart
 function updateChart(bars, n, colorScale){
-    console.log("                 ");
+    //console.log("                 ");
     //position bars
     bars.attr("x", function(d, i){
             return i * (chartInnerWidth / n) + leftPadding;
         })
         //size/resize bars
         .attr("height", function(d, i){
-            console.log(463 - yScale(parseFloat(d[expressed])));
+            //console.log(463 - yScale(parseFloat(d[expressed])));
             return 463 - yScale(parseFloat(d[expressed]));
         })
         .attr("y", function(d, i){
-            console.log(yScale(parseFloat(d[expressed])) + topBottomPadding);
+            //console.log(yScale(parseFloat(d[expressed])) + topBottomPadding);
             return yScale(parseFloat(d[expressed])) + topBottomPadding;
         })
         //color/recolor bars
         .style("fill", function(d){
-            console.log(choropleth(d, colorScale));
+            //console.log(choropleth(d, colorScale));
             return choropleth(d, colorScale);
         });
 
